@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Employee Portal</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark ">
+<strong><h3 class="text-white"> Employee<snap class="text-primary">Portal<snap></h3></strong>
+</nav>
+<h3 class="text-center">Employee Details </h3>
+<div class="text-right" style="padding-right:250px">
+<%= link_to 'Edit', edit_employee_path(@employee), class:"btn btn-warning"%>
+<%= link_to 'Delete', employee_path(@employee),data:{
+  turbo_method: :delete, turbo_confirm: "Are you sure?"
+}, class:"btn btn-danger"%>
+<%= link_to 'Back', root_path, class:"btn btn-primary"%>
+</div>
+<div class="container bg-light shadow p-3 mb-5 bg-white rounded">
+<h4>Employee Details</h4>
+<table class="table">
+<tr>
+<td>
+<strong>Name</strong>
+<p><%= @employee.name %></p>
+</td>
+<td>
+<strong>Email</strong>
+<p><%= @employee.email %></p>
+</td>
+<td>
+<strong>Designation</strong>
+<p><%= @employee.designation %></p>
+</td>
+</tr>
+<tr>
+<td>
+<strong>Joining date</strong>
+<p><%= @employee.joining_date %></p>
+</td>
+<td>
+<strong>Company name</strong>
+<p><%= @employee.company_name %></p>
+</td>
+<td>
+<strong>Company Address</strong>
+<p><%= @employee.company_address %></p>
+</td>
+</tr>
+</table>
+</div>
+
+<div class="container bg-light shadow p-3 mb-5 bg-white rounded">
+<h4>Personal Details</h4>
+<table class="table">
+<tr>
+<td>
+<strong>Date of birth</strong>
+<p><%= @employee.date_of_birth %></p>
+</td>
+<td>
+<strong>Gender</strong>
+<p><%= @employee.gender %></p>
+</td>
+<td>
+<strong>Contact Number</strong>
+<p><%= @employee.contact_no %></p>
+</td>
+</tr>
+<tr>
+<td>
+<strong>Father Name</strong>
+<p><%= @employee.father_name %></p>
+</td>
+<td>
+<strong>Mother name</strong>
+<p><%= @employee.mother_name %></p>
+</td>
+<td>
+<strong>Father contact number</strong>
+<p><%= @employee.father_contact_no %></p>
+</td>
+</tr>
+<tr>
+<td>
+<strong>Mother contact number</strong>
+<p><%= @employee.mother_contact_no %></p>
+</td>
+</tr>
+</table>
+</div>
+
+<div class="container bg-light shadow p-3 mb-5 bg-white rounded">
+<h4>Address Details</h4>
+<table class="table">
+<tr>
+<td>
+<strong>House no</strong>
+<p><%= @employee.house_no %></p>
+</td>
+<td>
+<strong>Area landmark</strong>
+<p><%= @employee.area_lankmark %></p>
+</td>
+<td>
+<strong>City</strong>
+<p><%= @employee.city %></p>
+</td>
+</tr>
+<tr>
+<td>
+<strong>Pin Code</strong>
+<p><%= @employee.pin_code %></p>
+</td>
+<td>
+<strong>State</strong>
+<p><%= @employee.state %></p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

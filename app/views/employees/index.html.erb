@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Employee Portal</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark ">
+<strong><h3 class="text-white"> Employee<snap class="text-primary">Portal<snap></h3></strong>
+<div>
+<%= link_to 'New Employee' , new_employee_path, class:"btn btn-primary"%>
+<%= link_to 'Export', employees_path(format: 'csv'), class:"btn btn-warning" %>
+</div>
+</nav>
+<div class="container">
+<h3 class="text-center">Employee Listing</h3>
+<table class="table">
+<thead>
+<th>Name</th>
+<th>Email</th>
+<th>Designation </th>
+<th></th>
+</thead>
+<% @employees.each do |employee|%>
+<tr>
+<td><%= employee.name %></td>
+<td><%= employee.email %></td>
+<td><%= employee.designation %></td>
+<td><%= link_to 'View', employee, class:"btn btn-success" %></td>
+</tr>
+<% end %>
+</table>
+</div>
+</body>
+</html>

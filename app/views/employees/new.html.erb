@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Employee Portal</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<%= form_with model: @employee do |form |%>
+<nav class="navbar navbar-dark bg-dark ">
+<strong><h3 class="text-white"> Employee<snap class="text-primary">Portal<snap></h3></strong>
+</nav>
+<h3 class="text-center">New Employee listing </h3>
+
+<div class="container bg-light shadow p-3 mb-5 bg-white rounded">
+
+<table class="table">
+<div>
+<h4>Employee Details </h4>
+<div style="text-align:right"><%= link_to 'back', root_path, class:"btn btn-primary" %><div><div>
+<tr>
+  <td>
+  <%= form.label :name %><br>
+  <%= form.text_field :name , class: "form-control"%>
+  <% @employee.errors.full_messages_for(:name).each do |message |%>
+    <span><small class="text-danger"><%= message %></small></span>
+  <% end %>
+ 
+  </td>
+  <td>
+  <%= form.label :email %><br>
+  <%= form.text_field :email , class: "form-control"%>
+  </td>
+</tr>
+<tr>
+  <td>
+  <%= form.label :designation %><br>
+  <%= form.text_field :designation , class: "form-control"%>
+  </td>
+  <td>
+  <%= form.label :joining_date %><br>
+  <%= form.date_field :joining_date , class: "form-control"%>
+  </td>
+</tr>
+<tr>
+  <td>
+  <%= form.label :company_name %><br>
+  <%= form.text_area :company_name , class: "form-control"%>
+  </td>
+  <td>
+  <%= form.label :company_address %><br>
+  <%= form.text_area :company_address , class: "form-control"%>
+  </td>
+</tr>
+</table>
+</div>
+<div class="container bg-light shadow p-3 mb-5 bg-white rounded">
+<h4>Personal Details</h4>
+<table class="table">
+<tr>
+  <td>
+  <%= form.label :date_of_birth %><br>
+  <%= form.date_field :date_of_birth , class: "form-control"%>
+  </td>
+  <td>
+  <%= form.label :contact_no %><br>
+  <%= form.telephone_field :contact_no , class: "form-control"%>
+  </td>
+</tr>
+<tr>
+  <td>
+  <%= form.label :gender %><br>
+  <%= form.label :gender, "Male" %>
+  <%= form.radio_button :gender , class:"form-check"%>
+  <%= form.label :gender, "Female"%>
+  <%= form.radio_button :gender , class:"form-check"%>
+  </td>
+  <td>
+  <%= form.label :contact_no %><br>
+  <%= form.telephone_field :contact_no , class: "form-control"%>
+  </td>
+</tr>
+<tr>
+  <td>
+  <%= form.label :father_name %><br>
+  <%= form.text_field :father_name , class: "form-control"%>
+  </td>
+  <td>
+  <%= form.label :mother_name %><br>
+  <%= form.text_field :mother_name , class: "form-control"%>
+  </td>
+</tr>
+<tr>
+  <td>
+  <%= form.label :father_contact_no %><br>
+  <%= form.telephone_field :father_contact_no , class: "form-control"%>
+  </td>
+  <td>
+  <%= form.label :mother_contact_no %><br>
+  <%= form.telephone_field :mother_contact_no , class: "form-control"%>
+  </td>
+</tr>
+</table>
+</div>
+<div class="container bg-light shadow p-3 mb-5 bg-white rounded">
+<h4> Address Details </h4>
+<table class="table">
+<tr>
+  <td>
+  <%= form.label :house_no %><br>
+  <%= form.text_field :house_no , class: "form-control"%>
+  </td>
+  <td>
+  <%= form.label :area_lankmark %><br>
+  <%= form.text_field :area_lankmark , class: "form-control"%>
+  </td>
+</tr>
+<tr>
+  <td>
+  <%= form.label :city %><br>
+  <%= form.text_field :city , class: "form-control"%>
+  </td>
+  <td>
+  <%= form.label :pin_code %><br>
+  <%= form.text_field :pin_code , class: "form-control"%>
+  </td>
+ <td>
+  <%= form.label :state %>
+  <%= form.text_field :state , class: "form-control"%>
+  </td>
+</tr>
+
+</table>
+<%= form.submit  class:"btn btn-success" %>
+</div>
+
+<% end %>
+
+
+</body>
+</html>
